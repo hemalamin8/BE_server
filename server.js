@@ -215,15 +215,7 @@ server.post("/auth/login", (req, res) => {
     const currUser = data.users[result];
     const lastLoginTime = new Date(Date.now());
     data.users[result] = {
-      email: currUser.email,
-      password: currUser.password,
-      username: currUser.username,
-      active: currUser.active,
-      position: currUser.position,
-      address: req.address,
-      role: currUser.role,
-      id: result === 0 ? 1 : userdb.users[result - 1].id + 1,
-      confirmpassword: currUser.confirmpassword,
+      ...data.users[result],
       lastLogin: lastLoginTime.toLocaleString()?.slice(0, 9),
     };
 
