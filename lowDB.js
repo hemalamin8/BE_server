@@ -201,13 +201,12 @@ app.post("/auth/registersubadmin", async (req, res) => {
 app.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
-  if (!isAuthenticated({ email, password })) {
+  if (isAuthenticated({ email, password })) {
     const status = 401;
     const message = "Incorrect email or password";
     res.status(status).json({ status, message });
     return;
   }
-
   try {
     const index = await getIndex({ email });
     const user = db.data.users[index];
