@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "email": "hemal@gmail.com",
-      "password": "asd",
-      "username": "John",
-      "active": false,
-      "position": "Manager",
-      "role": "admin",
-      "id": 1,
-      "confirmpassword": "asd",
-      "lastLogin": "5/15/2023",
-      "profilePath": "John-Avatar.jpg"
-    },
-    {
       "username": "hemalasd",
       "email": "adfsadf@gmail.com",
       "active": true,
@@ -22,7 +10,54 @@
       "role": "user",
       "password": "zxc",
       "lastLogin": "5/15/2023, 5:57:39 PM",
-      "id": 6
+      "id": 1,
+      "profilePath": "hemalasd-Avatar.jpg"
+    },
+    {
+      "username": "hemalasd",
+      "email": "adfsadf@gmail.com",
+      "active": true,
+      "position": "",
+      "address": "",
+      "confirmpassword": "zxc",
+      "role": "subadmin",
+      "password": "zxc",
+      "lastLogin": "5/15/2023, 5:57:39 PM",
+      "id": 7
+    },
+    {
+      "username": "hemalasdasdasdasd",
+      "email": "adfsadf@gmail.com",
+      "active": false,
+      "position": "",
+      "address": "",
+      "confirmpassword": "asd",
+      "role": "subadmin",
+      "password": "asd",
+      "lastLogin": "5/16/2023, 3:58:46 PM",
+      "id": 78
+    },
+    {
+      "email": "adfsadf@gmail.com",
+      "password": "asd",
+      "position": "",
+      "username": "asd",
+      "address": "",
+      "active": true,
+      "role": "subadmin",
+      "id": 80,
+      "lastLogin": "5/16/2023, 4:02:28 PM"
+    },
+    {
+      "email": "adfsadf@gmail.com",
+      "password": "asd",
+      "position": "",
+      "username": "asdwdsaas",
+      "address": "",
+      "active": false,
+      "role": "subadmin",
+      "id": 81,
+      "lastLogin": "5/16/2023, 4:02:38 PM"
     }
   ],
   "roles": {

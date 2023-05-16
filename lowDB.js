@@ -137,7 +137,7 @@ app.post("/auth/register", async (req, res) => {
     req.body;
   await db.read();
 
-  if (!isAuthenticated({ email, password })) {
+  if (!(await isAuthenticated({ email, password }))) {
     const status = 401;
     const message = "Email and password already exist";
     res.status(status).json({ message });
@@ -166,11 +166,12 @@ app.post("/auth/register", async (req, res) => {
 });
 
 app.post("/auth/registersubadmin", async (req, res) => {
+  console.log("subadmin");
   const { email, password, position, username, address, active, role } =
     req.body;
   await db.read();
 
-  if (await isAuthenticated({ email, password })) {
+  if (!(await isAuthenticated({ email, password }))) {
     const status = 401;
     const message = "Email and password already exist";
     res.status(status).json({ message });
@@ -247,7 +248,9 @@ app.get("/getall", async (req, res) => {
 app.get("/getallusers", async (req, res) => {
   try {
     await db.read();
-    const users = db.data.users.filter((user) => user.role === "user");
+    const users = db.data.users.filter(
+      (user) => user.role === dotenv.config().parsed.ROLE_TWO
+    );
     res.status(200).json({ users });
   } catch (error) {
     throw new Error(error.toString());
@@ -257,7 +260,9 @@ app.get("/getallusers", async (req, res) => {
 app.get("/getallsubadmins", async (req, res) => {
   try {
     await db.read();
-    const subadmins = db.data.users.filter((user) => user.role === "subadmin");
+    const subadmins = db.data.users.filter(
+      (user) => user.role === dotenv.config().parsed.ROLE_THREE
+    );
     res.status(200).json({ subadmins });
   } catch (error) {
     throw new Error(error.toString());
@@ -403,11 +408,10 @@ app.post("/forgetpassword", cors(), async (req, res) => {
   const { email } = req.body;
   if (!isEmailExist(email)) {
     const status = 401;
-    const message = "Incorrect email or password";
+    const message = "Incorrect email";
     res.status(status).json({ status, message });
     return;
   }
-
   try {
     const index = await getIndex({ email });
     await db.read();
