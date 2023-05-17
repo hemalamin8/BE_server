@@ -137,10 +137,10 @@ app.post("/auth/register", async (req, res) => {
     req.body;
   await db.read();
 
-  if (!(await isAuthenticated({ email, password }))) {
+  if (await isAuthenticated({ email, password })) {
     const status = 401;
     const message = "Email and password already exist";
-    res.status(status).json({ message });
+    res.status(status).json({ status, message });
     return;
   }
   try {
@@ -166,7 +166,6 @@ app.post("/auth/register", async (req, res) => {
 });
 
 app.post("/auth/registersubadmin", async (req, res) => {
-  console.log("subadmin");
   const { email, password, position, username, address, active, role } =
     req.body;
   await db.read();
@@ -174,7 +173,7 @@ app.post("/auth/registersubadmin", async (req, res) => {
   if (!(await isAuthenticated({ email, password }))) {
     const status = 401;
     const message = "Email and password already exist";
-    res.status(status).json({ message });
+    res.status(status).json({ status, message });
     return;
   }
   try {
@@ -201,7 +200,7 @@ app.post("/auth/registersubadmin", async (req, res) => {
 app.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
-  if (isAuthenticated({ email, password })) {
+  if (!(await isAuthenticated({ email, password }))) {
     const status = 401;
     const message = "Incorrect email or password";
     res.status(status).json({ status, message });
@@ -442,7 +441,7 @@ app.post(
         profilePath: currUser.username + "-Avatar.jpg",
       };
       db.write();
-      res.sendStatus(200);
+      res.status(200).json(currUser.profilePath);
     } catch (error) {
       throw new Error(error.toString());
     }
