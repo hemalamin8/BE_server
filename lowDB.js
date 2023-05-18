@@ -8,6 +8,7 @@ import { Low } from "lowdb";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import multer from "multer";
+import { unlinkSync } from "node:fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, "database.json");
@@ -112,7 +113,8 @@ var storage = multer.diskStorage({
   filename: async function (req, file, cb) {
     const { id } = req.params;
     const user = await getUser(id);
-    const file_name = user[0].username + "-Avatar.jpg";
+    const file_name =
+      user[0].username + "-Avatar-" + Date.now().toString() + ".jpg";
     cb(null, String(file_name));
   },
 });
@@ -427,6 +429,12 @@ app.post("/forgetpassword", cors(), async (req, res) => {
   }
 });
 
+app.delete("/deleteprofile", async (req, res) => {
+  const { id } = req.params;
+  const currUser = getUser(id);
+  const pathName = __dirname + "/public/" + currUser.username;
+  pathName.includes(currUser.username);
+});
 app.post(
   "/profile/:id",
   upload.single("avatar"),
@@ -435,13 +443,14 @@ app.post(
     const index = await findIndexOfUser(id);
     try {
       await db.read();
+      console.log(req.file.filename, "filename");
       const currUser = db.data.users[index];
       db.data.users[index] = {
         ...currUser,
-        profilePath: currUser.username + "-Avatar.jpg",
+        profilePath: req.file.filename,
       };
       db.write();
-      res.status(200).json(currUser.profilePath);
+      res.status(200).json(req.file.filename);
     } catch (error) {
       throw new Error(error.toString());
     }

@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "email": "adfsadf@gmail.com",
-      "password": "asd",
-      "position": "",
-      "username": "hemal",
-      "address": "asd",
-      "active": true,
-      "role": "user",
-      "id": 82,
-      "lastLogin": "5/17/2023, 4:11:10 PM"
-    },
-    {
       "username": "hemal",
       "email": "hemal@gmail.com",
       "active": false,
@@ -19,8 +8,9 @@
       "address": "",
       "role": "admin",
       "password": "asd",
-      "lastLogin": "5/17/2023",
-      "id": 83
+      "lastLogin": "5/18/2023",
+      "id": 83,
+      "profilePath": "hemal-Avatar-1684418373325.jpg"
     },
     {
       "email": "adfsadf@gmail.com",
