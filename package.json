@@ -5,7 +5,7 @@
   "main": "lowDB.js",
   "type": "module",
   "scripts": {
-    "start": "set NODE_ENV=production",
+    "start": "node ./lowDB.js",
     "start-auth": "nodemon ./lowDB.js --ignore /*.json localhost 8080",
     "build" : "npm i"
   },
