@@ -485,6 +485,6 @@ app.post(
 //   }
 // });
 
-app.listen(8000, function () {
+app.listen( dotenv.config().parsed.PORT, function () {
   console.log("Listening on port");
 });

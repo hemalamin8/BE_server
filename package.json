@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "set NODE_ENV=dev && json-server --watch ./database.json",
-    "start-auth": "nodemon ./lowDB.js --ignore /*.json localhost 8080"
+    "start-auth": "nodemon ./lowDB.js --ignore /*.json localhost 8080",
+    "build" : "npm i"
   },
   "author": "ME",
   "license": "ISC",
