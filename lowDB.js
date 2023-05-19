@@ -171,8 +171,8 @@ app.post("/auth/registersubadmin", async (req, res) => {
   const { email, password, position, username, address, active, role } =
     req.body;
   await db.read();
-
-  if (!(await isAuthenticated({ email, password }))) {
+  console.log(await isAuthenticated({ email, password }), "!await isAuthenticated({ email, password })")
+  if (await isAuthenticated({ email, password })) {
     const status = 401;
     const message = "Email and password already exist";
     res.status(status).json({ status, message });
@@ -208,6 +208,7 @@ app.post("/auth/login", async (req, res) => {
     res.status(status).json({ status, message });
     return;
   }
+  
   try {
     const index = await getIndex({ email });
     const user = db.data.users[index];
@@ -485,6 +486,6 @@ app.post(
 //   }
 // });
 
-app.listen( dotenv.config().parsed.PORT, function () {
+app.listen(dotenv.config().parsed.PORT, function () {
   console.log("Listening on port");
 });

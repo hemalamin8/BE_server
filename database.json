@@ -8,20 +8,42 @@
       "address": "",
       "role": "admin",
       "password": "asd",
-      "lastLogin": "5/18/2023",
+      "lastLogin": "5/19/2023",
       "id": 83,
-      "profilePath": "hemal-Avatar-1684418373325.jpg"
+      "profilePath": "hemal-Avatar-1684500795847.jpg"
     },
     {
-      "email": "adfsadf@gmail.com",
+      "email": "hema123l@gmail.com",
       "password": "asd",
       "position": "",
-      "username": "hemal",
+      "username": "John",
       "address": "",
       "active": true,
       "role": "subadmin",
-      "id": 94,
-      "lastLogin": "5/17/2023, 4:47:07 PM"
+      "id": 84,
+      "lastLogin": "5/19/2023, 4:25:06 PM"
+    },
+    {
+      "email": "hema123asdl@gmail.com",
+      "password": "asd",
+      "position": "",
+      "username": "Johnasd",
+      "address": "",
+      "active": true,
+      "role": "subadmin",
+      "id": 85,
+      "lastLogin": "5/19/2023, 4:25:48 PM"
+    },
+    {
+      "email": "john.123@gmail.com",
+      "password": "asd",
+      "position": "",
+      "username": "HemalAminasd",
+      "address": "",
+      "active": true,
+      "role": "subadmin",
+      "id": 86,
+      "lastLogin": "5/19/2023, 4:27:22 PM"
     }
   ],
   "roles": {
@@ -36,7 +58,7 @@
       },
       "users": {
         "edit": true,
-        "delete": false,
+        "delete": true,
         "create": true,
         "view": false
       },
