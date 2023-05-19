@@ -5,7 +5,6 @@ var express = require("express");
 const jwt = require("jsonwebtoken");
 var app = express();
 var cors = require("cors");
-var blob = require("node:buffer");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const multer = require("multer");
