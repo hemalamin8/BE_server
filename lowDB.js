@@ -429,12 +429,12 @@ app.post("/forgetpassword", cors(), async (req, res) => {
   }
 });
 
-app.delete("/deleteprofile", async (req, res) => {
-  const { id } = req.params;
-  const currUser = getUser(id);
-  const pathName = __dirname + "/public/" + currUser.username;
-  pathName.includes(currUser.username);
-});
+// app.delete("/deleteprofile", async (req, res) => {
+//   const { id } = req.params;
+//   const currUser = getUser(id);
+//   const pathName = __dirname + "/public/" + currUser.username;
+//   pathName.includes(currUser.username);
+// });
 app.post(
   "/profile/:id",
   upload.single("avatar"),
