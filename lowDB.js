@@ -419,8 +419,8 @@ app.post("/forgetpassword", cors(), async (req, res) => {
     const user = db.data.users[index];
     const emailData = {
       email: email,
-      password: user.password,
-      username: user.username,
+      password: user?.password,
+      username: user?.username,
     };
     SendForgetPasswordMail(emailData)
       ? res.sendStatus(200)
