@@ -2,7 +2,7 @@
   "users": [
     {
       "username": "hemal",
-      "email": "hemal.amin@gmail.com",
+      "email": "hemal.amin2002@gmail.com",
       "active": false,
       "position": "",
       "address": "",
@@ -19,7 +19,7 @@
       "username": "John",
       "address": "",
       "active": true,
-      "role": "subadmin",
+      "role": "users",
       "id": 84,
       "lastLogin": "5/19/2023, 4:25:06 PM"
     },
@@ -27,7 +27,7 @@
       "email": "hema123asdl@gmail.com",
       "password": "asd",
       "position": "",
-      "username": "Johnasd",
+      "username": "Smith",
       "address": "",
       "active": true,
       "role": "subadmin",
@@ -38,7 +38,18 @@
       "email": "john.123@gmail.com",
       "password": "asd",
       "position": "",
-      "username": "HemalAminasd",
+      "username": "HemalAmin",
+      "address": "",
+      "active": true,
+      "role": "subadmin",
+      "id": 86,
+      "lastLogin": "5/19/2023, 4:27:22 PM"
+    },
+    {
+      "email": "user1.123@gmail.com",
+      "password": "asd",
+      "position": "",
+      "username": "user2",
       "address": "",
       "active": true,
       "role": "subadmin",
