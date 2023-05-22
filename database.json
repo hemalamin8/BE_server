@@ -2,12 +2,12 @@
   "users": [
     {
       "username": "hemal",
-      "email": "hemal@gmail.com",
+      "email": "hemal.amin@gmail.com",
       "active": false,
       "position": "",
       "address": "",
       "role": "admin",
-      "password": "asd",
+      "password": "hemal@8888",
       "lastLogin": "5/19/2023",
       "id": 83,
       "profilePath": "hemal-Avatar-1684502504329.jpg"
